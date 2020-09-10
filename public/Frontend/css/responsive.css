@@ -1,0 +1,136 @@
+@media (min-width: 320px) and (max-width: 500px) {
+
+    h1{
+        font-size: 18px;
+    }
+    .for-pc{
+        display: none;
+    }
+    .for-mob{
+        display: block;
+    }
+    .for-desktop{
+        display: none;
+    }
+    .for-phn{
+        display: block;
+    }
+    .banner-image{
+        background-size: 100%;
+        height: 25vh;
+    }
+    .banner-text {
+        width: 80%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .home-services .right{
+        position: unset;
+        transform: unset;
+        margin: 15px 0;
+    }
+    .counting-item{
+        margin: 15px 0;
+    }
+    .solutions-item-row .item {
+        padding: 50px 30px;
+    }
+    .solutions-item-row .item:hover .item-hover {
+        transform: translateY(0%);
+    }
+    .solutions-item-row .item .item-hover{
+        font-size: 50px;
+    }
+    .widget-item{
+        margin: 15px 0;
+    }
+    .contact-info .left {
+        margin: 15px 0;
+        position: unset;
+        transform: unset;
+    }
+    .home-services{
+        padding: 0;
+    }
+    .counting-item h1 span{
+        font-size: 18px;
+    }
+    .recent-project .left h1{
+        position: unset;
+        transform: unset;
+        margin: 15px 0;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 500px) and (max-width: 768px) {
+   
+    h2{
+        font-size: 16px;
+    }
+    p{
+        font-size: 12px;
+    }
+    .banner-text{
+        width: 70%;
+        top: 70%;
+    }
+    .banner-image {
+        height: 50vh;
+    }
+    .social-share ul li{
+        margin: 0
+    }
+    .services-info-row{
+        display: block;
+    }
+    .for-desktop{
+        display: none;
+    }
+    .for-phn{
+        display: block;
+    }
+    .technology-item .fas {
+        font-size: 30px;
+    }
+    .solutions-item-row .item {
+        padding: 100px 15px;
+    }
+    .technology-box{
+        width: 90%;
+    }
+    .hover-content{
+        right: 0;
+    }
+    .hover-content p {
+        font-size: 7px;
+    }
+    .design-left h1{
+        font-size: 16px;
+    }
+    .services-info-row-two{
+        margin-left: 15px;
+    }
+    .management-item {
+        padding: 25px;
+    }
+}
