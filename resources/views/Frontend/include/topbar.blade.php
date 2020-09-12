@@ -142,35 +142,36 @@
                         </a>
                     </div>
                 </div>
-                <!-- logo end -->
-
+                <!-- logo end --> 
+                @foreach(App\Contact::orderBy('id','asc')->get() as $contact)
                 <!-- social link start -->
                 <div class="col-md-4">
                     <div class="social-media">
                         <ul>
                             <li>
-                                <a href="">
+                                <a href="{{$contact->twitter}}">
                                     <i class="fab fa-twitter"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="{{$contact->facebook}}">
                                     <i class="fab fa-facebook-f"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="{{$contact->instagram}}">
                                     <i class="fab fa-instagram"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="{{$contact->linkedin}}">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
+                @endforeach
                 <!-- social link end -->
 
             </div>
