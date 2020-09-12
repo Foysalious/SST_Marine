@@ -87,12 +87,13 @@
 				<div class="col-md-12">
 					<p>
 						Copyright © 2020 
-						<a href="">
+						<a href="http://ssttechbd.com/">
 						SST Tech Ltd.
 						</a>
 						All Rights Reserved.
 					</p>			
-				</div>		
+				</div>	
+					
 			</div>
 		</div>
 	</section>
