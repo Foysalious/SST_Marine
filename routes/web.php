@@ -236,22 +236,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Route::get('/forms', 'frontendController@manage')->name('ContactForms');
 Route::get('/', 'frontendController@index')->name('homePage');
 Route::get('/about', 'frontendController@about')->name('aboutPage');
