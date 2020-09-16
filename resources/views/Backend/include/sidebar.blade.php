@@ -17,7 +17,7 @@
           
           </ul>
      
-          <ul id="sidebarnav" class="p-t-30">
+          {{-- <ul id="sidebarnav" class="p-t-30">
             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Home Page Service Section</span></a>
                 <ul aria-expanded="false" class="collapse  first-level">
                 <li class="sidebar-item"><a href="{{route('createParagraph')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Create Testimonial </span></a></li>
@@ -29,8 +29,8 @@
             
        
           
-          </ul>
-
+          </ul> --}}
+{{-- 
           <ul id="sidebarnav" class="p-t-30">
             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Home Page Countdown Section</span></a>
                 <ul aria-expanded="false" class="collapse  first-level">
@@ -42,12 +42,12 @@
             
        
           
-          </ul>
+          </ul> --}}
 
           
-          </ul>
+         
 
-          <ul id="sidebarnav" class="p-t-30">
+          {{-- <ul id="sidebarnav" class="p-t-30">
             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Home  Our Solutions Section</span></a>
                 <ul aria-expanded="false" class="collapse  first-level">
                 <li class="sidebar-item"><a href="{{route('createSolution')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Create Solutions </span></a></li>
@@ -58,9 +58,9 @@
             
        
           
-          </ul>
+          </ul> --}}
 
-          <ul id="sidebarnav" class="p-t-30">
+          {{-- <ul id="sidebarnav" class="p-t-30">
             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Home Our Major Clients</span></a>
                 <ul aria-expanded="false" class="collapse  first-level">
                 <li class="sidebar-item"><a href="{{route('createClients')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Create Clients </span></a></li>
@@ -71,7 +71,7 @@
             
        
           
-          </ul>
+          </ul> --}}
 
           
           <ul id="sidebarnav" class="p-t-30">

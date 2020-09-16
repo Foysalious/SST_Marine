@@ -15,6 +15,7 @@
     <!-- Custom CSS -->
     <link href="{{ asset('backend/dist/css/style.min.css')}}" rel="stylesheet">
     <link href="{{ asset('backend/dist/css/style.css')}}" rel="stylesheet">
+    <link href="{{ asset('backend/assets/css/rte_theme_default.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
     
 
@@ -24,7 +25,7 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    
+    rte_theme_default.css
         
      
     @yield('per_page_css')

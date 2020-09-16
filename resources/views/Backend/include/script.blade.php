@@ -22,7 +22,14 @@
 <script src="{{ asset('Backend/assets/libs/flot/jquery.flot.stack.js')}}"></script>
 <script src="{{ asset('Backend/assets/libs/flot/jquery.flot.crosshair.js')}}"></script>
 <script src="{{ asset('Backend/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
+<script src="{{ asset('Backend/assets/rte.js')}}"></script>
+<script src="{{ asset('Backend/assets/plugins/all_plugins.js')}}"></script>
 <script src="{{ asset('Backend/dist/js/pages/chart/chart-page-init.js')}}"></script>
+
+
+<!--Include the JS & CSS-->
+
+
 
 <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 <script src="http://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
