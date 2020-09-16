@@ -232,6 +232,18 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
         Route::post('/delete/{ships:id}', 'Backend\Protfolio@destroy')->name('deleteProtfolio');
     });
 
+    Route::group(['prefix' => 'about'], function(){
+        Route::get('/manage', 'Backend\AboutImageController@index')->name('manageAboutImage');
+        // Show Create Page and Store after Submit
+        Route::get('/create', 'Backend\AboutImageController@create')->name('createAboutImage');
+        Route::post('/create', 'Backend\AboutImageController@store')->name('storeAboutImage');
+        // Show Edit Page and Update after Submit
+        Route::get('/edit/{about_image:id}', 'Backend\AboutImageController@edit')->name('editAboutImage');
+        Route::post('/edit/{about_image:id}', 'Backend\AboutImageController@update')->name('updateAboutImage');
+        // Delete Slider From Manage
+        Route::post('/delete/{about_image:id}', 'Backend\AboutImageController@destroy')->name('deleteAboutImage');
+    });
+
 
 
 

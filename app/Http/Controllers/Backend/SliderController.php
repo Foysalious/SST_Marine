@@ -70,7 +70,7 @@ class SliderController extends Controller
     public function show($id)
     {
         //
-    }
+    } 
 
     /**
      * Show the form for editing the specified resource.
