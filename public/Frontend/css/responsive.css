@@ -61,6 +61,24 @@
         margin: 15px 0;
         text-align: center;
     }
+    .widget-item.image{
+        position: unset;
+        transform: unset;
+        top: unset;
+    }
+    .widget-item.copyright{
+        position: unset;
+        transform: unset;
+        top: unset;
+    }
+    .services-info .left{
+        background: #ededed;
+        padding: 15px;
+        margin: 15px 0;
+    }
+    .portfolio ul li {
+        display: grid;
+    }
 }
 
 

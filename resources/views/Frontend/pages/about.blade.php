@@ -6,7 +6,7 @@
 
 
 <!-- about banner start -->
-<section class="about-banner" style=" background-image: url('{{ asset('Frontend/images/PIL-14-2.jpeg') }}') " ">
+<section class="about-banner" style=" background-image: url('{{ asset('Frontend/images/40-TON-HYDRAULIC-TELESCOPIC-OFFSHORE-CRANE-FOR-SALE1.jpeg') }}') " ">
     
     <div class="opacity">
         <div class="container">
@@ -19,6 +19,37 @@
     </div>
 </section>
 <!-- about banner end -->
+
+
+<!-- about slider start -->
+<section class="about-sldier section-padding" style="background-image:  url('{{ asset('Frontend/images/services-bg-2.png') }}'); background-size: cover; background-position: center ">
+    <div class="container">
+        <div class="row">
+
+        <div class="about-company-carousel owl-carousel owl-theme">
+
+            <!-- company image item start -->
+            <div class="item">
+                <div class="col-md-8 offset-md-2">
+                    <img src="{{ asset('Frontend/images/about/DSCN6646.JPG') }}" alt="">
+                </div>
+            </div>
+            <!-- company image item end -->
+
+            <!-- company image item start -->
+            <div class="item">
+                <div class="col-md-8 offset-md-2">
+                    <img src="{{ asset('Frontend/images/about/DSCN6651.JPG') }}" alt="">
+                </div>
+            </div>
+            <!-- company image item end -->
+
+        </div>
+
+        </div>            
+    </div>
+</section>
+<!-- about slider end -->
 
 
 <!-- about info section start -->
@@ -50,102 +81,35 @@
 </section>
 <!-- about info section end -->
 
-
-<!-- certified title section start -->
-<section class="about-certified-title">
+<!-- about slider start -->
+<section class="about-sldier section-padding" style="background-image:  url('{{ asset('Frontend/images/services-bg-2.png') }}'); background-size: cover; background-position: center ">
     <div class="container">
-    
         <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center">Every design has our assurance for optimum performance.</h1>
-            </div>
-        </div>
 
-    </div>
-</section>
-<!-- certified title section end -->
+        <div class="about-company-carousel owl-carousel owl-theme">
 
-
-<!-- certified  section start -->
-<section class="about-certified section-padding">
-    <div class="container">
-    
-        <div class="row certified-row">
-        
-            <!-- item one start -->
-            @foreach(App\Design::orderBy('id','asc')->get() as $design)
-            <div class="col-md-4">
-                <div class="certified-item">
-                    <i class="far fa-check-square"></i>
-                <h3>{{$design->title}}</h3>
-                    <p>{{$design->paragraph}}</p>
+            <!-- company image item start -->
+            <div class="item">
+                <div class="col-md-8 offset-md-2">
+                    <iframe src="https://www.youtube.com/embed/hazMyK_cnzk" frameborder="0"></iframe>
                 </div>
             </div>
-            @endforeach
-            <!-- item one end -->
+            <!-- company image item end -->
 
-            <!-- item one start -->
-         
-            <!-- item one end -->
-
-        </div>
-
-    </div>
-</section>
-<!-- certified section end -->
-
-
-<!-- testimonial seciton start -->
-<section class="about-testimonial section-padding">
-    <div class="container">
-        
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center">Client Testimonials</h1>
-            </div>
-        </div>
-
-        <!-- testimonial slider start -->
-        <div class="row">
-
-            <div class="testimonial-carousel owl-carousel owl-theme">
-
-                <!-- item start -->
-                @foreach(App\Testimonial::orderBy('id','asc')->get() as $testimonial)
-                <div class="item">
-                    
-                    <div class="col-md-12">
-                        
-                        <div class="testimonial-item">
-                            <div class="qoute">
-                                <p>
-                                    <i>
-                                        {{$testimonial->comment}}	
-                                    </i>	
-                                </p>
-                            </div>
-                            <div class="testimonial-logo">
-                                <img src="{{asset('images/testimonial/'. $testimonial->image)}}" class="img-fluid" alt="">
-                            </div>
-                            <div class="testimonial-title">
-                                <h2 class="text-center">{{$testimonial->name}}</h2>
-                            </div>
-                        </div>
-                      
-                    </div>
-                    
+            <!-- company image item start -->
+            <div class="item">
+                <div class="col-md-8 offset-md-2">
+                    <iframe src="https://www.youtube.com/embed/hazMyK_cnzk" frameborder="0"></iframe>
                 </div>
-               @endforeach
-                <!-- item end -->
-
-                
             </div>
+            <!-- company image item end -->
 
         </div>
-        <!-- testimonial slider end -->
 
+        </div>            
     </div>
 </section>
-<!-- testimonial seciton end -->
+<!-- about slider end -->
+
 
 @extends ('frontend.include.footer')

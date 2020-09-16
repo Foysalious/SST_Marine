@@ -19,7 +19,7 @@
 
 
 <!-- contact information start -->
-<section class="contact-info section-padding">
+<section class="contact-info section-padding" >
     <div class="container">
         <div class="row">
 

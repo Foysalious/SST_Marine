@@ -118,3 +118,18 @@ $(function() {
         }
     });
 });
+
+
+
+const collapse_button = document.getElementById('coll')
+const collapse_button_2 = document.getElementById('coll-2')
+let mainWrapper = document.getElementById("main-wrapper")
+
+
+collapse_button.onclick = () => {       
+    return mainWrapper.classList.toggle('mini-sidebar')
+}
+
+collapse_button_2.onclick = () => {       
+    return mainWrapper.classList.toggle('show-sidebar')
+}

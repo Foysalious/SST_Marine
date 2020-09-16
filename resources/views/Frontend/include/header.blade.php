@@ -12,7 +12,6 @@
 
 	<!-- fonts file -->
 	<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@100;400;600;700&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 

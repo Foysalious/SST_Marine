@@ -14830,3 +14830,37 @@ File: scss
 @media (max-width: 991.98px) {
   .do-block {
     display: block !important; } }
+    .p-t-30 {
+      padding: 0!important;
+  }
+
+  #main-wrapper .topbar .top-navbar .navbar-header[data-logobg=skin5] {
+    background: white;
+}
+#main-wrapper .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper .topbar[data-navbarbg=skin5]{
+  background: white!important;
+}
+html body .font-24 {
+  font-size: 24px;
+  background: #006EAD;
+  padding: 15px;
+}
+.sidebar-nav ul .sidebar-item .sidebar-link {
+  color: #006ead;
+}
+#main-wrapper .left-sidebar[data-sidebarbg=skin5], #main-wrapper .left-sidebar[data-sidebarbg=skin5] ul{
+  background: white;
+}
+.sidebar-nav ul .sidebar-item .sidebar-link i {
+  color: #006ead;
+}
+.auth-bg{
+  background: #006EAD!important
+}
+.sign-button{
+  background: white;
+  color: #006EAD;
+}
+[class^="ti-"], [class*=" ti-"]{
+  color: #006EAD!important;
+}

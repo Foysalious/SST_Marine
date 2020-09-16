@@ -17,7 +17,7 @@
 
 
 <!-- projects section start -->
-<section class="projects section-padding">
+<section class="projects section-padding" style="background-image:  url('{{ asset('Frontend/images/services-bg-2.png') }}'); background-size: cover; background-position: center ">
     <div class="container">
         
         <div class="row">
@@ -25,21 +25,23 @@
             @foreach( $ships as $ship)
             <div class="col-md-4">
                 <div class="project-item">
-                    <div class="hover-content">
-                    <p class="text-center">{{$ship->vessel_name}}</p>
-                    </div>
-                    <a href="project-detail.php">
-                        <img src="{{asset('images/protfolio/'.$ship->image)}}" class="img-fluid" alt="">
-                    </a>
-                    <div class="projects-content text-center">
-                        <h3 class="text-center">{{$ship->name}}</h3>
-                        <p class="text-center">
-                            {!! Str::limit($ship->description, 150) !!}
-                        </p>
+                    <a href="{{route('project_details',$ship->id)}}">
+                        <div class="hover-content">
+                        <p class="text-center">{{$ship->vessel_name}}</p>
+                        </div>
                         <a href="{{route('project_details',$ship->id)}}">
-                            READ MORE <i class="fas fa-angle-double-right"></i>
+                            <img src="{{asset('images/protfolio/'.$ship->image)}}" class="img-fluid" alt="">
                         </a>
-                    </div>
+                        <div class="projects-content text-center">
+                            <h3 class="text-center">{{$ship->name}}</h3>
+                            <p class="text-center">
+                                {!! Str::limit($ship->description, 150) !!}
+                            </p>
+                            <a href="{{route('project_details',$ship->id)}}">
+                                READ MORE <i class="fas fa-angle-double-right"></i>
+                            </a>
+                        </div>
+                    </a>
                 </div>
             </div>
             @endforeach

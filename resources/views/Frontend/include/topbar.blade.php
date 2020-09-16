@@ -85,7 +85,7 @@
         <!-- navbar media end -->
 
         <!-- navbar search start -->
-        {{-- <div class="navbar-search">
+        <div class="navbar-search">
             <form action="">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search...">
@@ -94,7 +94,7 @@
                     </button>
                 </div>
             </form>
-        </div> --}}
+        </div> 
         <!-- navbar search end -->
 
     </div>
@@ -119,8 +119,27 @@
         <div class="container">
             <div class="row">
 
-                {{-- <!-- search start -->
-                <div class="col-md-4">
+                <!-- logo start -->
+                <div class="col-md-2">
+                    <div class="logo">
+                        <a href="index.php">
+                        <img src="{{asset('Frontend/images/logo.png')}}" class="img-fluid" alt="">
+                        </a>
+                    </div>
+                </div>
+                <!-- logo end --> 
+
+                <!-- navbar title start -->
+                <div class="col-md-5">
+                    <div class="navbar-title">
+                        <h2><i>SST MARINE SOLUTIONS LIMITED</i></h2>
+                        <marquee><i>......a passion for ship design</i></marquee>
+                    </div>
+                </div>
+                <!-- navbar title end -->
+
+                <!-- search start -->
+                <div class="col-md-2">
                     <div class="search-box">
                         <form action="">
                             <div class="form-group">
@@ -132,27 +151,13 @@
                         </form>
                     </div>
                 </div>
-                <!-- search end --> --}}
-
-                <!-- logo start -->
-                <div class="col-md-4">
-                    <div class="logo">
-                        <a href="index.php">
-                        <img src="{{asset('Frontend/images/logo.png')}}" class="img-fluid" alt="">
-                        </a>
-                    </div>
-                </div>
-                <!-- logo end --> 
+                <!-- search end -->
+            
                 @foreach(App\Contact::orderBy('id','asc')->get() as $contact)
                 <!-- social link start -->
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="social-media">
                         <ul>
-                            <li>
-                                <a href="{{$contact->twitter}}">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </li>
                             <li>
                                 <a href="{{$contact->facebook}}">
                                     <i class="fab fa-facebook-f"></i>
@@ -160,12 +165,7 @@
                             </li>
                             <li>
                                 <a href="{{$contact->instagram}}">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{$contact->linkedin}}">
-                                    <i class="fab fa-linkedin"></i>
+                                    <i class="fab fa-youtube"></i>
                                 </a>
                             </li>
                         </ul>

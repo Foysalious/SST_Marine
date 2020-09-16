@@ -14,6 +14,7 @@
     <link href="{{ asset('backend/assets/libs/flot/css/float-chart.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{ asset('backend/dist/css/style.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('backend/dist/css/style.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
     
 

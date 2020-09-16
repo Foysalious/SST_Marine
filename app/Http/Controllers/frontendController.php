@@ -34,9 +34,15 @@ class frontendController extends Controller
       return view('Frontend.pages.Services');  
     }
 
-    public function technology()
+    public function portfolio()
     {
-      return view('Frontend.pages.technology');  
+      return view('Frontend.pages.portfolio');  
+    }
+    public function portfolioDetail(){
+      return view('Frontend.pages.portfolio-detail');
+    }
+    public function allPortfolio(){
+      return view('Frontend.pages.all-portfolio');
     }
 
     public function projects()
@@ -45,11 +51,25 @@ class frontendController extends Controller
       return view('Frontend.pages.projects', compact('ships'));  
     }
 
+    public function client(){
+      return view('Frontend.pages.client');
+    }
+    public function event(){
+      return view('Frontend.pages.event');
+    }
+
     public function project_details(ships $ship)
     {
     
       
       return view('Frontend.pages.project-detail',compact('ship'));  
+    }
+
+    public function career(){
+      return view('Frontend.pages.career');
+    }
+    public function careerDetail(){
+      return view('Frontend.pages.careerDetail');
     }
 
     public function contact()

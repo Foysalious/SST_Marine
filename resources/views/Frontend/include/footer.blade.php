@@ -3,8 +3,8 @@
 			<div class="row">
 				
 				<!-- widget one start -->
-				<div class="col-md-4">
-					<div class="widget-item">
+				<div class="col-md-2">
+					<div class="widget-item image">
 						<img src="{{asset('Frontend/images/logo.png')}}" class="img-fluid" alt="">				
 					</div>
 				</div>
@@ -12,30 +12,22 @@
 
 				<!-- widget two start -->
 				<div class="col-md-4">
-					<div class="widget-item">
-						<h3>Quick Links</h3>		
-						<ul>
-							<li>
-								<i class="fas fa-anchor"></i> Seismic vessel 
-							</li>
-							<li>
-								<i class="fas fa-anchor"></i> Seismic vessel 
-							</li>
-						</ul>	
+					<div class="widget-item copyright">
+						<p>Copyright © 2010 SST Marine Solutions | All rights reserved | Developed by <a href="">SST Tech Ltd.</a> - The Software Company</p>	
 					</div>
 				</div>
 				<!-- widget two end -->
 
 				<!-- widget three start -->
 				@foreach(App\Contact::orderBy('id','asc')->get() as $contact)
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<div class="widget-item">
 						<h3>Contact Us</h3>		
 						<ul>
 							<li>
 								<i class="fas fa-phone"></i> {{$contact->number}}
 							</li>
-							<li>
+							<li style="text-transform: lowercase">
 								<i class="fas fa-envelope-open"></i> {{$contact->email}}
 							</li>
 							<li>
@@ -47,21 +39,6 @@
 								<li>
 								<a href="{{$contact->facebook}}">
 										<i class="fab fa-facebook-f"></i>
-									</a>
-								</li>
-								<li>
-									<a href="{{$contact->twitter}}">
-										<i class="fab fa-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="{{$contact->linkedin}}">
-										<i class="fab fa-linkedin"></i>
-									</a>
-								</li>
-								<li>
-									<a href="{{$contact->instagram}}">
-										<i class="fab fa-instagram"></i>
 									</a>
 								</li>
 								<li>
@@ -79,24 +56,6 @@
 			</div>
 		</div>
 	</footer>
-
-
-	<section class="footer-bottom">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<p>
-						Copyright © 2020 
-						<a href="http://ssttechbd.com/">
-						SST Tech Ltd.
-						</a>
-						All Rights Reserved.
-					</p>			
-				</div>	
-					
-			</div>
-		</div>
-	</section>
 
 </div>
 <!-- body content end -->

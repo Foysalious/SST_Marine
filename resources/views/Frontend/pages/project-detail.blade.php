@@ -18,7 +18,7 @@
 
 
 <!-- project detail information start -->
-<section class="p-detail-info section-padding">
+<section class="p-detail-info section-padding" style="background-image:  url('{{ asset('Frontend/images/services-bg-2.png') }}'); background-size: cover; background-position: center ">
     <div class="container">
         <div class="row">
         

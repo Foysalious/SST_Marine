@@ -11,14 +11,14 @@
                         </li>
 
                         <li class="parent-nav">
-                            <a href="{{route('aboutPage')}}">about <i class="fas fa-angle-down"></i> </a>
-                            <div class="child-nav">
+                            <a href="{{route('aboutPage')}}">about us
+                            <!-- <div class="child-nav">
                                 <ul>
                                     <li>
                                         <a href="{{route('teamPage')}}">Team</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </li>
 
                         <li>
@@ -26,11 +26,23 @@
                         </li>
 
                         <li>
-                            <a href="{{route('technologyPage')}}">technology</a>
+                            <a href="{{route('portfolioPage')}}">portfolio</a>
                         </li>
 
                         <li>
-                            <a href="{{route('projectPage')}}">projects</a>
+                            <a href="{{route('projectPage')}}">current projects</a>
+                        </li>
+
+                        <li>
+                            <a href="{{route('client')}}">our clients</a>
+                        </li>
+
+                        <li>
+                            <a href="{{route('event')}}">news & events</a>
+                        </li>
+
+                        <li>
+                            <a href="{{route('career')}}">career</a>
                         </li>
 
                         <li>

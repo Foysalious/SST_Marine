@@ -45,27 +45,82 @@ $('.counter').counterUp({
     time: 1000
 })
 //home banner js 
+$('#home-banner-carousel').owlCarousel({
+    loop:true,
+    nav:true,
+    dots: false,
+    autoplay:true,
+    autoplayTimeout:5000,
+    autoplayHoverPause:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+})
+
+//event carousel
+$('.event-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:false,
+    dots:true,
+    autoplay:true,
+    autoplayTimeout:5000,
+    autoplayHoverPause:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+})
+
+//services filter
 $(document).ready(function(){
-    $('#home-banner-carousel').owlCarousel({
-        loop:true,
-        nav:true,
-        dots: false,
-        autoplay:true,
-        autoplayTimeout:5000,
-        autoplayHoverPause:false,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:1
-            },
-            1000:{
-                items:1
-            }
+    $(".services-click").click(function(){
+        var servicesItem = $(this).attr('id');
+        var servicesList = $(this).attr('id');
+        if( servicesItem != 'all' ){
+            $(".services-item").removeClass('active-service');
+            $('.' + servicesItem ).addClass('active-service');
+            $(".services-click").removeClass('active-item');
+            $("."+ servicesList).addClass('active-item');
         }
     })
-});
+})
+
+//about company
+$('.about-company-carousel').owlCarousel({
+    loop:true,
+    nav:false,
+    dots:true,
+    autoplay:true,
+    autoplayTimeout:5000,
+    autoplayHoverPause:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+})
 
 //client carousel
 $('.client-carousel').owlCarousel({
