@@ -39,6 +39,6 @@
  
 </script>
 <script>var editor2 = new RichTextEditor("#text");</script>
-
+<script>var editor2 = new RichTextEditor("#client");</script>
 
 @yield('per_page_js')

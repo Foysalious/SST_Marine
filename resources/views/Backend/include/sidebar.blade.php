@@ -102,8 +102,8 @@
           
           </ul> --}}
 
-          {{-- <ul id="sidebarnav" class="p-t-30">
-            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Home Our Major Clients</span></a>
+          <ul id="sidebarnav" class="p-t-30">
+            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Our Clients</span></a>
                 <ul aria-expanded="false" class="collapse  first-level">
                 <li class="sidebar-item"><a href="{{route('createClients')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Create Clients </span></a></li>
                     <li class="sidebar-item"><a href="{{route('manageClients')}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Manage Clients </span></a></li>
@@ -113,7 +113,20 @@
             
        
           
-          </ul> --}}
+          </ul>
+
+          <ul id="sidebarnav" class="p-t-30">
+            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Our Clients Description</span></a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                <li class="sidebar-item"><a href="{{route('createClientsDescription')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Create Clients Description </span></a></li>
+                    <li class="sidebar-item"><a href="{{route('manageClientsDescription')}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Manage Clients Description</span></a></li>
+                    
+                </ul>
+            </li>
+            
+       
+          
+          </ul>
 
           
           <ul id="sidebarnav" class="p-t-30">

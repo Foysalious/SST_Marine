@@ -88,6 +88,18 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
         Route::post('/delete/{client:id}', 'Backend\ClientController@destroy')->name('deleteClients');
     });
 
+    Route::group(['prefix' => 'clientsDescription'], function(){
+        Route::get('/manage', 'Backend\ClientDescription@index')->name('manageClientsDescription');
+        // Show Create Page and Store after Submit
+        Route::get('/create', 'Backend\ClientDescription@create')->name('createClientsDescription');
+        Route::post('/create', 'Backend\ClientDescription@store')->name('storeClientsDescription');
+        // Show Edit Page and Update after Submit
+        Route::get('/edit/{id}', 'Backend\ClientDescription@edit')->name('editClientsDescription');
+        Route::post('/edit/{id}', 'Backend\ClientDescription@update')->name('updateClientsDescription');
+        // Delete Slider From Manage
+        Route::post('/delete/{id}', 'Backend\ClientDescription@destroy')->name('deleteClientsDescription');
+    });
+
 
     Route::group(['prefix' => 'solution'], function(){
         Route::get('/manage', 'Backend\SolutionController@index')->name('manageSolution');
