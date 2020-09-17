@@ -100,6 +100,18 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
         Route::post('/delete/{id}', 'Backend\ClientDescription@destroy')->name('deleteClientsDescription');
     });
 
+    Route::group(['prefix' => 'news&Events'], function(){
+        Route::get('/manage', 'Backend\EventController@index')->name('manageNews');
+        // Show Create Page and Store after Submit
+        Route::get('/create', 'Backend\EventController@create')->name('createNews');
+        Route::post('/create', 'Backend\EventController@store')->name('storeNews');
+        // Show Edit Page and Update after Submit
+        Route::get('/edit/{id}', 'Backend\EventController@edit')->name('editNews');
+        Route::post('/edit/{id}', 'Backend\EventController@update')->name('updateNews');
+        // Delete Slider From Manage
+        Route::post('/delete/{id}', 'Backend\EventController@destroy')->name('deleteNews');
+    });
+
 
     Route::group(['prefix' => 'solution'], function(){
         Route::get('/manage', 'Backend\SolutionController@index')->name('manageSolution');
