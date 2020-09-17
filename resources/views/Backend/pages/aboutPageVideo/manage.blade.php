@@ -12,21 +12,18 @@
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Title</th>
-              <th scope="col">Description</th>
-              
               <th scope="col">Action</th>
+              
 
             </tr>
           </thead>
           <tbody>
  
 
-              @foreach( $Services as $service )
+              @foreach( $videos as $video )
                   <tr>
-                    <th scope="row"> {{ $service->id }} </th>
-                    <td>{{ $service->title }}</td>
-                    <td>{!! $service->services !!}</td>
-                   
+                    <th scope="row"> {{ $video->id }} </th>
+                    <td>{{ $video->link }}</td>
                     
 
                     
@@ -35,12 +32,12 @@
                    
                     <td>
                         <div class="btn-group">
-                            <a href="{{ route('editServices', $service->id) }}" class="btn btn-success btn-sm">Update</a>
-                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteCategory{{ $service->id }}">Delete</button>
+                            <a href="{{ route('editAboutVideo', $video->id) }}" class="btn btn-success btn-sm">Update</a>
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteCategory{{ $video->id }}">Delete</button>
                         </div>
 
                   <!-- Modal -->
-								<div class="modal fade" id="deleteCategory{{ $service->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal fade" id="deleteCategory{{ $video->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
@@ -51,7 +48,7 @@
                                         </div>
                                         <div class="modal-body">
                                              <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-                                          <form action="{{ route('deleteServices', $service->id ) }}" method="POST">
+                                          <form action="{{ route('deleteAboutVideo', $video->id ) }}" method="POST">
                                               @csrf
                                               <button type="submit" class="btn btn-danger">Delete</button>
                                           </form>

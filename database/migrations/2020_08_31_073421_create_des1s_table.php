@@ -16,7 +16,7 @@ class CreateDes1sTable extends Migration
         Schema::create('des1s', function (Blueprint $table) {
             $table->increments('id');
             $table->longText('description_1')->nullable();
-            $table->longText('description_2')->nullable();
+            
             
             $table->timestamps();
         });

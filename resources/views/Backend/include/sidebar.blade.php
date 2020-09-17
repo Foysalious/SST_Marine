@@ -25,7 +25,40 @@
                     
                 </ul>
             </li>
+          </ul>
      
+          <ul id="sidebarnav" class="p-t-30">
+            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">About Video</span></a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                <li class="sidebar-item"><a href="{{route('createAboutVideo')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Create Videos </span></a></li>
+                    <li class="sidebar-item"><a href="{{route('manageAboutVideo')}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Manage videos </span></a></li>
+                    
+                </ul>
+            </li>
+          </ul>
+
+          <ul id="sidebarnav" class="p-t-30">
+            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">About Page Description</span></a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                <li class="sidebar-item"><a href="{{route('createDescription')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Create Description </span></a></li>
+                    <li class="sidebar-item"><a href="{{route('manageDescription')}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Manage Description </span></a></li>
+                    
+                </ul>
+            </li>
+          </ul>
+
+          <ul id="sidebarnav" class="p-t-30">
+            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Services Info</span></a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                <li class="sidebar-item"><a href="{{route('createServices')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Create Services Info </span></a></li>
+                    <li class="sidebar-item"><a href="{{route('manageServices')}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Manage Services Info </span></a></li>
+                    
+                </ul>
+            </li>
+            
+       
+          
+          </ul>
           {{-- <ul id="sidebarnav" class="p-t-30">
             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Home Page Service Section</span></a>
                 <ul aria-expanded="false" class="collapse  first-level">
@@ -96,7 +129,7 @@
           
           </ul>
 
-          <ul id="sidebarnav" class="p-t-30">
+          {{-- <ul id="sidebarnav" class="p-t-30">
             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">About Design Section</span></a>
                 <ul aria-expanded="false" class="collapse  first-level">
                 <li class="sidebar-item"><a href="{{route('createDesign')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Create Design Projects </span></a></li>
@@ -107,9 +140,9 @@
             
        
           
-          </ul>
+          </ul> --}}
 
-          <ul id="sidebarnav" class="p-t-30">
+          {{-- <ul id="sidebarnav" class="p-t-30">
             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">About Client Testimonial</span></a>
                 <ul aria-expanded="false" class="collapse  first-level">
                 <li class="sidebar-item"><a href="{{route('createTestimonial')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Create Testimonial </span></a></li>
@@ -120,9 +153,9 @@
             
        
           
-          </ul>
+          </ul> --}}
 
-          <ul id="sidebarnav" class="p-t-30">
+          {{-- <ul id="sidebarnav" class="p-t-30">
             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Description</span></a>
                 <ul aria-expanded="false" class="collapse  first-level">
                   <li class="sidebar-item"><a href="{{route('createDescription')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Create Anchor Description </span></a></li>
@@ -136,7 +169,7 @@
             
        
           
-          </ul>
+          </ul> --}}
 
           
           <ul id="sidebarnav" class="p-t-30">
@@ -178,18 +211,7 @@
           
           </ul>
 
-          <ul id="sidebarnav" class="p-t-30">
-            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Services Info</span></a>
-                <ul aria-expanded="false" class="collapse  first-level">
-                <li class="sidebar-item"><a href="{{route('createServices')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Create Services Info </span></a></li>
-                    <li class="sidebar-item"><a href="{{route('manageServices')}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Manage Services Info </span></a></li>
-                    
-                </ul>
-            </li>
-            
-       
-          
-          </ul>
+     
 
           <ul id="sidebarnav" class="p-t-30">
             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Protfolio Info</span></a>

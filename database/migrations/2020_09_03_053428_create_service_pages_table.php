@@ -16,7 +16,7 @@ class CreateServicePagesTable extends Migration
         Schema::create('service_pages', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('services');
+            $table->longText('services');
             
             $table->timestamps();
         });

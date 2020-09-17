@@ -12,19 +12,13 @@
                 <input type="text" name="title" class="form-control" value="{{ $service->title }}">
             </div>
 
+            <div class="form-group">
+              <label>Description For Services</label>
+              <textarea class="form-control" id="text" name="services">{!! $service->services !!}</textarea>
+            </div>
            
 
-            <div class="form-group">
-                <label>Team</label>
-                <select name="services">
-                    <option value="Ship Design" {{ $service->services == 'Ship Design' ? 'selected' : '' }}>Ship Design</option>
-                    <option value="Engineering Services" {{ $service->services == 'Engineering Services' ? 'selected' : '' }}>Engineering Services</option>
-                    <option value="Consultancy" {{ $service->services == 'Consultancy' ? 'selected' : '' }}>Consultancy</option>
-                   
-                  </select>
-            </div>
-      
-
+            
            
 
             

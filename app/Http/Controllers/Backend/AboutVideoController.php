@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\des1;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\about_video;
+
 use Brian2694\Toastr\Facades\Toastr;
 
-class DescriptionController extends Controller
+class AboutVideoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,8 @@ class DescriptionController extends Controller
      */
     public function index()
     {
-        $descriptions=des1::orderBy('id','desc')->get();
-        return view('backend.pages.aboutPageDescription.manage',compact('descriptions'));
+        $videos=about_video::orderBy('id','desc')->get();
+        return view('Backend.pages.aboutPageVideo.manage',compact('videos'));
     }
 
     /**
@@ -27,7 +28,8 @@ class DescriptionController extends Controller
      */
     public function create()
     {
-        return view('backend.pages.aboutPageDescription.create');
+        return view('backend.pages.aboutPageVideo.create');
+
     }
 
     /**
@@ -38,13 +40,13 @@ class DescriptionController extends Controller
      */
     public function store(Request $request)
     {
-        $description = new des1();
-        $description->description_1             = $request->description_1;
-        
-        
-        $description->save();
-        Toastr::success('Description Created');
-        return redirect()->route('manageDescription');
+        $video = new about_video();
+
+        $video->link = $request->link;
+        $video->save();
+        Toastr::success('Video Created');
+        return redirect()->route('manageAboutVideo');
+
     }
 
     /**
@@ -55,7 +57,7 @@ class DescriptionController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -64,12 +66,10 @@ class DescriptionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(des1 $description,$id)
+    public function edit(about_video $video, $id)
     {
-        $description = des1::find($id);
-
-        return view('backend.pages.aboutPageDescription.edit', compact('description'));
-
+        $video = about_video::find($id);
+        return view('backend.pages.aboutPageVideo.edit',compact('video'));
     }
 
     /**
@@ -79,16 +79,15 @@ class DescriptionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, des1 $description,$id)
+    public function update(Request $request,about_video $video, $id)
     {
-        $description = des1::find($id);
-        $description->description_1             = $request->description_1;
-       
-       
+        $video = about_video::find($id);
+
+        $video->link = $request->link;
+        $video->save();
+        Toastr::success('Video Updated');
+        return redirect()->route('manageAboutVideo');
         
-        $description->save();
-        Toastr::success('Description Updated');
-        return redirect()->route('manageDescription');
     }
 
     /**
@@ -97,13 +96,11 @@ class DescriptionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(des1 $description, $id )
+    public function destroy(about_video $video,$id)
     {
-        
-        $description= des1::find($id);
-       
-        $description->delete();
-        Toastr::error('Description Deleted');
-        return redirect()->route('manageDescription');
+        $video = about_video::find($id);
+        $video->delete();
+        Toastr::error('Video Deleted');
+        return redirect()->route('manageAboutVideo');
     }
 }

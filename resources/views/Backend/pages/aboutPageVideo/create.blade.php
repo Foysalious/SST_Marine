@@ -5,17 +5,11 @@
     <div class="col-md">
       <div class="card card-body">
         <!-- Create New Category Form Start -->
-        <form action="{{ route('storeServices') }}" method="POST" enctype="multipart/form-data">
-            @csrf      
-            
+        <form action="{{ route('storeAboutVideo') }}" method="POST" enctype="multipart/form-data">
+            @csrf                	
             <div class="form-group">
-              <label>Title</label>
-              <input class="form-control"  name="title">
-          </div>
-
-            <div class="form-group">
-                <label>Description For Services</label>
-                <textarea class="form-control"  id="text" name="services"></textarea>
+                <label>Video Link</label>
+                <input type="text" name="link" class="form-control" placeholder="Please Insert Youtube Video Link">
             </div>
 
            

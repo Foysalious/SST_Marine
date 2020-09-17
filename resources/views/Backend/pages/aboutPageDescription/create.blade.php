@@ -12,10 +12,7 @@
                 <textarea class="form-control" id="summary-ckeditor" name="description_1"></textarea>
             </div>
 
-            <div class="form-group">
-                <label> Description 2</label>
-                <textarea class="form-control" id="text-ckeditor" name="description_2"></textarea>
-            </div>
+         
 
            
             <div class="form-group">

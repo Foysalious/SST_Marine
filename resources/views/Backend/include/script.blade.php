@@ -35,9 +35,10 @@
 <script src="http://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script src="http://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace( 'summary-ckeditor' );
-    CKEDITOR.replace( 'text-ckeditor' );
+    var editor1 = new RichTextEditor("#summary-ckeditor");
+ 
 </script>
+<script>var editor2 = new RichTextEditor("#text");</script>
 
 
 @yield('per_page_js')

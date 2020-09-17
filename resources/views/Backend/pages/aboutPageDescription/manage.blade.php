@@ -12,7 +12,7 @@
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Description 1</th>
-              <th scope="col">Description 2</th>
+             
               <th scope="col">Action</th>
 
             </tr>
@@ -25,14 +25,6 @@
                     <th scope="row"> {{ $description->id }} </th>
                   
                     <td>{!! $description->description_1 !!}</td>
-                    <td>{!! $description->description_2 !!}</td>
-                
-                    
-
-                    
-                    
-                  
-                   
                     <td>
                         <div class="btn-group">
                             <a href="{{ route('editDescription', $description->id) }}" class="btn btn-success btn-sm">Update</a>

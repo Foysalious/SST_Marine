@@ -137,7 +137,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
         Route::post('/delete/{testimonial:id}', 'Backend\TestimonialController@destroy')->name('deleteTestimonial');
     });
 
-    Route::group(['prefix' => 'description'], function(){
+    Route::group(['prefix' => 'description'], function(){ 
         Route::get('/manage', 'Backend\DescriptionController@index')->name('manageDescription');
         // Show Create Page and Store after Submit
         Route::get('/create', 'Backend\DescriptionController@create')->name('createDescription');
@@ -232,7 +232,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
         Route::post('/delete/{ships:id}', 'Backend\Protfolio@destroy')->name('deleteProtfolio');
     });
 
-    Route::group(['prefix' => 'about'], function(){
+    Route::group(['prefix' => 'aboutImage'], function(){
         Route::get('/manage', 'Backend\AboutImageController@index')->name('manageAboutImage');
         // Show Create Page and Store after Submit
         Route::get('/create', 'Backend\AboutImageController@create')->name('createAboutImage');
@@ -244,6 +244,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
         Route::post('/delete/{about_image:id}', 'Backend\AboutImageController@destroy')->name('deleteAboutImage');
     });
 
+    Route::group(['prefix' => 'aboutVideo'], function(){
+        Route::get('/manage', 'Backend\AboutVideoController@index')->name('manageAboutVideo');
+        // Show Create Page and Store after Submit
+        Route::get('/create', 'Backend\AboutVideoController@create')->name('createAboutVideo');
+        Route::post('/create', 'Backend\AboutVideoController@store')->name('storeAboutVideo');
+        // Show Edit Page and Update after Submit
+        Route::get('/edit/{id}', 'Backend\AboutVideoController@edit')->name('editAboutVideo');
+        Route::post('/edit/{id}', 'Backend\AboutVideoController@update')->name('updateAboutVideo');
+        // Delete Slider From Manage
+        Route::post('/delete/{id}', 'Backend\AboutVideoController@destroy')->name('deleteAboutVideo');
+    });
 
 
 
