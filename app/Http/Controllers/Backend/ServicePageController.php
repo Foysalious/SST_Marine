@@ -101,3 +101,4 @@ class ServicePageController extends Controller
         return redirect()->route('manageServices');
     }
 }
+ 

@@ -112,6 +112,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
         Route::post('/delete/{id}', 'Backend\EventController@destroy')->name('deleteNews');
     });
 
+    Route::group(['prefix' => 'career'], function(){
+        Route::get('/manage', 'Backend\CarrerController@index')->name('managecareer');
+        // Show Create Page and Store after Submit
+        Route::get('/create', 'Backend\CarrerController@create')->name('createcareer');
+        Route::post('/create', 'Backend\CarrerController@store')->name('storecareer');
+        // Show Edit Page and Update after Submit
+        Route::get('/edit/{career:id}', 'Backend\CarrerController@edit')->name('editcareer');
+        Route::post('/edit/{career:id}', 'Backend\CarrerController@update')->name('updatecareer');
+        // Delete Slider From Manage
+        Route::post('/delete/{career:id}', 'Backend\CarrerController@destroy')->name('deletecareer');
+    });
 
     Route::group(['prefix' => 'solution'], function(){
         Route::get('/manage', 'Backend\SolutionController@index')->name('manageSolution');
