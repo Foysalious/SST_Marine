@@ -86,9 +86,11 @@
 
         <!-- navbar search start -->
         <div class="navbar-search">
-            <form action="">
+
+        <form action="{{route('search')}}" method="POST" >
+                @csrf
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search...">
+                    <input type="text" class="form-control" name= "search" placeholder="Search...">
                     <button type="submit">
                         <i class="fas fa-search"></i>
                     </button>

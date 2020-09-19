@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ships;
+use App\Ship;
 use App\ContactForm;
 
 class frontendController extends Controller
@@ -98,6 +99,11 @@ class frontendController extends Controller
       $contacts=ContactForm::orderBy('id','desc')->get();
         return view('backend.pages.contactForm.manage',compact('contacts'));
     }
-    
+    public function search(Request $request)
+    {
+      $search=Ships::Where('name', 'LIKE', "%$request->name%")->orWhere('category', 'LIKE', "%$request->name%")->orWhere('vessel_name', 'LIKE', "%$request->name%")->orWhere('owner', 'LIKE', "%$request->name%")->
+      orWhere('builder', 'LIKE', "%$request->name%")->orWhere('class', 'LIKE', "%$request->name%")->orWhere('build_date', 'LIKE', "%$request->name%")->orWhere('description', 'LIKE', "%$request->name%")->
+      orWhere('features', 'LIKE', "%$request->name%")->get();
+    }
    
 }

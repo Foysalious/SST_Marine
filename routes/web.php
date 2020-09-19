@@ -1,7 +1,11 @@
 <?php
 
+use App\Protfolio;
+use App\Project;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -316,9 +320,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
         Route::post('/delete/{protfolioimages:id}', 'Backend\ProtfolioImagesController@destroy')->name('deleteProtfolioImage');
     });
 
+   
+
 
 });
 
+
+Route::get('/search', 'frontendController@search')->name('search');
 
 Route::get('/forms', 'frontendController@manage')->name('ContactForms');
 Route::get('/', 'frontendController@index')->name('homePage');
