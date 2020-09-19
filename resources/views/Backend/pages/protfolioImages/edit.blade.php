@@ -8,8 +8,8 @@
         <form action="{{ route('updateProtfolioImage', $protfolio->id) }}" method="POST" enctype="multipart/form-data">
             @csrf                	
             <div class="form-group">
-                <label> Title</label>
-                <input type="text" name="title" class="form-control" value="{!! $protfolio->description !!}">
+                <label> Description</label>
+                <textarea type="text" name="description" id="text" class="form-control" >{!! $protfolio->description !!}</textarea>
             </div>
 
            
@@ -27,10 +27,12 @@
             </div>
 
             <div class="form-group">protfolios
-                <label>Team</label>
-                <select name="team">
-                    <option value="{{ $protfolio->id }}" {{ $protfolio->protfolio_id == $protfolio->protfolios->id ? 'selected' : '' }}>{{$protfolio->protfolios->title}}</option>
-                    
+                <label>Protfolio Category</label>
+                <select name="protfolio_id">
+                    <option>Please Select Protfolio Category</option>
+                    @foreach ( App\Protfolio::orderBy('id', 'asc')->get() as $protfolioimg)
+                    <option value="{{ $protfolioimg->id }}" @if( $protfolioimg->id==$protfolio->protfolios->id ) selected @endif>{{ $protfolioimg->title }}</option>
+                    @endforeach
                    
                   </select>
             </div>

@@ -20,6 +20,7 @@
             </tr>
           </thead>
           <tbody>
+           
  
 
               @foreach( $protfolios as $protfolio )

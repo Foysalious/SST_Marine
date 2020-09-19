@@ -80,9 +80,10 @@ class ProtfolioImagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(ProtfolioImages $protfolio ,$id)
     {
-        
+        $protfolio= ProtfolioImages::find($id);
+        return view('backend.pages.protfolioImages.edit',compact('protfolio'));
     }
 
     /**
@@ -92,9 +93,24 @@ class ProtfolioImagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProtfolioImages $protfolio,Request $request, $id)
     {
-        //
+        $protfolio= ProtfolioImages::find($id);
+        $protfolio->protfolio_id             = $request->protfolio_id;
+        $protfolio->description             = $request->description;
+        if ( $request->image )
+        {
+            if ( File::exists('images/protfolio/' . $protfolio->image ) ){
+                File::delete('images/protfolio/' . $protfolio->image);
+            }
+            $image = $request->file('image');
+            $img = time() .Str::random(12). '.' . $image->getClientOriginalExtension();
+            $location = public_path('images/protfolio/' . $img);
+            Image::make($image)->save($location);
+            $protfolio->image = $img;
+        }
+        $protfolio->save();
+        return redirect()->route('manageProtfolioImage');
     }
 
     /**
@@ -103,8 +119,18 @@ class ProtfolioImagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(ProtfolioImages $protfolio,$id)
     {
-        //
+        $protfolio= ProtfolioImages::find($id);
+        if( File::exists('images/protfolio/'. $protfolio->image) ){
+            File::delete('images/protfolio/'. $protfolio->image);
+        }
+        $protfolio->delete();
+        Toastr::error('Service Deleted');
+        return redirect()->route('manageProtfolioImage');
     }
 }
+
+
+
+
