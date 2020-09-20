@@ -6,12 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\ProtfolioImages; 
 use App\Protfolio;
+use App\Events;
+use App\eventImages;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
 use Brian2694\Toastr\Facades\Toastr;
 
-class ProtfolioImagesController extends Controller
+class EventImageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +22,8 @@ class ProtfolioImagesController extends Controller
      */
     public function index()
     {
-        $protfolios= ProtfolioImages::orderBy('id','desc')->get();
-        return view('backend.pages.protfolioImages.manage',compact('protfolios'));
+        $events= eventImages::orderBy('id','desc')->get();
+        return view('backend.pages.eventImages.manage',compact('events'));
     }
 
     /**
@@ -31,8 +33,7 @@ class ProtfolioImagesController extends Controller
      */
     public function create()
     {
-        return view('backend.pages.protfolioImages.create');
-
+        return view('backend.pages.eventImages.create');
     }
 
     /**
@@ -43,9 +44,9 @@ class ProtfolioImagesController extends Controller
      */
     public function store(Request $request)
     {
-        $protfolio = new ProtfolioImages();
-        $protfolio->protfolio_id             = $request->protfolio_id;
-        $protfolio->description             = $request->description;
+        $event = new eventImages();
+        $event->event_id             = $request->event_id;
+      
         
         
        
@@ -54,13 +55,14 @@ class ProtfolioImagesController extends Controller
         {
             $image = $request->file('image');
             $img = time() .Str::random(12). '.' . $image->getClientOriginalExtension();
-            $location = public_path('images/protfolio/' . $img);
+            $location = public_path('images/event/' . $img);
             Image::make($image)->save($location);
-            $protfolio->image = $img;
+            $event->image = $img;
         }
-        $protfolio->save();
-        Toastr::success('Protfolio Created');
-        return redirect()->route('manageProtfolioImage');
+        $event->save();
+        Toastr::success('Image Created');
+        return redirect()->route('manageeventImage');
+
     }
 
     /**
@@ -80,10 +82,10 @@ class ProtfolioImagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(ProtfolioImages $protfolio ,$id)
+    public function edit(eventImages $event ,$id)
     {
-        $protfolio= ProtfolioImages::find($id);
-        return view('backend.pages.protfolioImages.edit',compact('protfolio'));
+        $event= eventImages::find($id);
+        return view('backend.pages.eventImages.edit',compact('event'));
     }
 
     /**
@@ -93,24 +95,24 @@ class ProtfolioImagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ProtfolioImages $protfolio,Request $request, $id)
+    public function update(eventImages $event,Request $request, $id)
     {
-        $protfolio= ProtfolioImages::find($id);
-        $protfolio->protfolio_id             = $request->protfolio_id;
-        $protfolio->description             = $request->description;
+        $event= eventImages::find($id);
+        $event->event_id             = $request->event_id;
+        
         if ( $request->image )
         {
-            if ( File::exists('images/protfolio/' . $protfolio->image ) ){
-                File::delete('images/protfolio/' . $protfolio->image);
+            if ( File::exists('images/event/' . $event->image ) ){
+                File::delete('images/event/' . $event->image);
             }
             $image = $request->file('image');
             $img = time() .Str::random(12). '.' . $image->getClientOriginalExtension();
-            $location = public_path('images/protfolio/' . $img);
+            $location = public_path('images/event/' . $img);
             Image::make($image)->save($location);
-            $protfolio->image = $img;
+            $event->image = $img;
         }
-        $protfolio->save();
-        return redirect()->route('manageProtfolioImage');
+        $event->save();
+        return redirect()->route('manageeventImage');
     }
 
     /**
@@ -119,18 +121,14 @@ class ProtfolioImagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProtfolioImages $protfolio,$id)
+    public function destroy(eventImages $event,$id)
     {
-        $protfolio= ProtfolioImages::find($id);
-        if( File::exists('images/protfolio/'. $protfolio->image) ){
-            File::delete('images/protfolio/'. $protfolio->image);
+        $event= eventImages::find($id);
+        if( File::exists('images/event/'. $event->image) ){
+            File::delete('images/event/'. $event->image);
         }
-        $protfolio->delete();
-        Toastr::error('Service Deleted');
-        return redirect()->route('manageProtfolioImage');
+        $event->delete();
+        Toastr::error('Image Deleted');
+        return redirect()->route('manageeventImage');
     }
 }
-
-
-
-

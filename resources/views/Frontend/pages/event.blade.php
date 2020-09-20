@@ -75,16 +75,14 @@
 
                         <div class="event-carousel owl-carousel owl-theme">
                             <!-- item start -->
+                            @foreach(App\eventImages::orderBy('id','desc')->where('event_id',$event->id)->get() as $eventImage) 
                             <div class="item">
-                                <img src="{{ asset('Frontend/images/8062975c-4d42-4e0e-bcb3-f46265ab76e8.JPG') }}" class="img-fluid" alt="">                        
+                                <img src="{{ asset('images/event/'.$eventImage->image) }}" class="img-fluid" alt="">                        
                             </div>
+                            @endforeach
                             <!-- item end -->
 
-                            <!-- item start -->
-                            <div class="item">
-                                <img src="{{ asset('Frontend/images/a66d60ba-f598-4a1a-aae6-10be45bd8052.JPG') }}" class="img-fluid" alt="">                              
-                            </div>
-                            <!-- item end -->
+                         
                         </div>
 
                     </div>            
@@ -109,16 +107,14 @@
 
                         <div class="event-carousel owl-carousel owl-theme">
                             <!-- item start -->
+                            @foreach(App\eventImages::orderBy('id','desc')->where('event_id',$event->id)->get() as $eventImage) 
                             <div class="item">
-                                <img src="{{ asset('Frontend/images/8062975c-4d42-4e0e-bcb3-f46265ab76e8.JPG') }}" class="img-fluid" alt="">                        
+                                <img src="{{ asset('images/event/'.$eventImage->image) }}" class="img-fluid" alt="">                        
                             </div>
+                            @endforeach
                             <!-- item end -->
 
-                            <!-- item start -->
-                            <div class="item">
-                                <img src="{{ asset('Frontend/images/a66d60ba-f598-4a1a-aae6-10be45bd8052.JPG') }}" class="img-fluid" alt="">                              
-                            </div>
-                            <!-- item end -->
+                         
                         </div>
 
                     </div>            
