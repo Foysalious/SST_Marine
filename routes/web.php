@@ -246,7 +246,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
         // Delete Slider From Manage
         Route::post('/delete/{servicepage:id}', 'Backend\ServicePageController@destroy')->name('deleteServices');
     });
-
+ 
     Route::group(['prefix' => 'protfolio'], function(){ 
         Route::get('/manage', 'Backend\Protfolio@index')->name('manageProtfolio');
         // Show Create Page and Store after Submit
@@ -259,17 +259,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
         Route::post('/delete/{ships:id}', 'Backend\Protfolio@destroy')->name('deleteProtfolio');
     });
 
-    Route::group(['prefix' => 'protfolio'], function(){
-        Route::get('/manage', 'Backend\Protfolio@index')->name('manageProtfolio');
-        // Show Create Page and Store after Submit
-        Route::get('/create', 'Backend\Protfolio@create')->name('createProtfolio');
-        Route::post('/create', 'Backend\Protfolio@store')->name('storeProtfolio');
-        // Show Edit Page and Update after Submit
-        Route::get('/edit/{ships:id}', 'Backend\Protfolio@edit')->name('editProtfolio');
-        Route::post('/edit/{ships:id}', 'Backend\Protfolio@update')->name('updateProtfolio');
-        // Delete Slider From Manage
-        Route::post('/delete/{ships:id}', 'Backend\Protfolio@destroy')->name('deleteProtfolio');
-    });
+    
 
     Route::group(['prefix' => 'aboutImage'], function(){
         Route::get('/manage', 'Backend\AboutImageController@index')->name('manageAboutImage');
@@ -296,17 +286,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
     });
 
 
-    Route::group(['prefix' => 'protfolios'], function(){
-        Route::get('/manage', 'Backend\ProtfolioController@index')->name('manageProtfolio');
-        // Show Create Page and Store after Submit
-        Route::get('/create', 'Backend\ProtfolioController@create')->name('createProtfolio');
-        Route::post('/create', 'Backend\ProtfolioController@store')->name('storeProtfolio');
-        // Show Edit Page and Update after Submit
-        Route::get('/edit/{protfolio:id}', 'Backend\ProtfolioController@edit')->name('editProtfolios');
-        Route::post('/edit/{protfolio:id}', 'Backend\ProtfolioController@update')->name('updateProtfolios');
-        // Delete Slider From Manage
-        Route::post('/delete/{protfolio:id}', 'Backend\ProtfolioController@destroy')->name('deleteProtfolios');
-    });
+    // Route::group(['prefix' => 'protfolios'], function(){
+    //     Route::get('/manage', 'Backend\ProtfolioController@index')->name('manageProtfolio');
+    //     // Show Create Page and Store after Submit
+    //     Route::get('/create', 'Backend\ProtfolioController@create')->name('createProtfolio');
+    //     Route::post('/create', 'Backend\ProtfolioController@store')->name('storeProtfolio');
+    //     // Show Edit Page and Update after Submit
+    //     Route::get('/edit/{protfolio:id}', 'Backend\ProtfolioController@edit')->name('editProtfolios');
+    //     Route::post('/edit/{protfolio:id}', 'Backend\ProtfolioController@update')->name('updateProtfolios');
+    //     // Delete Slider From Manage
+    //     Route::post('/delete/{protfolio:id}', 'Backend\ProtfolioController@destroy')->name('deleteProtfolios');
+    // });
 
     Route::group(['prefix' => 'protfoliosImage'], function(){
         Route::get('/manage', 'Backend\ProtfolioImagesController@index')->name('manageProtfolioImage');

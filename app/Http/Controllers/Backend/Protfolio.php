@@ -32,7 +32,7 @@ class Protfolio extends Controller
     {
         return view('Backend.pages.projectPage.create');
     }
-
+ 
     /**
      * Store a newly created resource in storage.
      *
