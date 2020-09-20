@@ -18,12 +18,7 @@
                 <textarea class="form-control" id="summary-ckeditor" name="description_1"></textarea>
             </div>
 
-            <div class="form-group">
-                <label>Image</label>
-                <input type="file" class="form-control"  name="image">
-            </div>
-
-         
+            
 
            
             <div class="form-group">

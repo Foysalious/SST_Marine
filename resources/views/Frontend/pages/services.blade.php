@@ -26,18 +26,33 @@
             <div class="col-md-4">
                 <div class="left">
                     <ul>
-                        <li class="services-click active-item 1" id="1">
-                            <i class="fas fa-angle-double-right"></i> new ship design
+                        @php
+                            $i = 0
+                        @endphp
+                        @foreach(App\ServicePage::orderBy('id','desc')->get() as $service) 
+                        @if( $i == 0 )
+                        <li class="services-click active-item {{$service->id}}" id="{{$service->id}}">
+                            <i class="fas fa-angle-double-right"></i> {{$service->title}}
                         </li>
-                        <li class="services-click 2" id="2">
-                            <i class="fas fa-angle-double-right"></i> conversion and modification design
+                        @endif
+                        @php
+                            $i--
+                        @endphp
+                       @endforeach
+
+                        @php
+                            $i = 0
+                        @endphp
+                        @foreach(App\ServicePage::orderBy('id','desc')->get() as $service) 
+                        @if( $i != 0 )
+                        <li class="services-click {{$service->id}}" id="{{$service->id}}">
+                            <i class="fas fa-angle-double-right"></i> {{$service->title}}
                         </li>
-                        <li class="services-click 3" id="3">
-                            <i class="fas fa-angle-double-right"></i> detail engineering service
-                        </li>
-                        <li class="services-click 4" id="4">
-                            <i class="fas fa-angle-double-right"></i> specialized technical assistance & consultancy
-                        </li>
+                        @endif
+                        @php
+                            $i++
+                        @endphp
+                        @endforeach
                     </ul>                
                 </div>            
             </div>
@@ -47,24 +62,42 @@
             <div class="col-md-8">
 
                 <!-- item start -->
-                <div class="right services-item active-service 1">
-                    <h3>New Ship Design</h3>    
+                @php
+                    $i = 0
+                @endphp
+                @foreach(App\ServicePage::orderBy('id','desc')->get() as $service)
+                @if( $i == 0 ) 
+                <div class="right services-item active-service {{$service->id}}">
+                    <h3>{{$service->title}}</h3>    
                     <div class="services-content">
-                        <p>GB Marine’s naval architecture and marine engineering services includes new vessel designs, existing vessel conversion and modification project work.</p>   
-                        <img src="{{ asset('Frontend/images/newshipdesign/Lines Plan(2).PNG') }}" class="img-fluid" alt="">                 
+                        {!!$service->services!!}            
                     </div>            
                 </div>
+                @endif
+                @php
+                    $i--
+                @endphp
+                @endforeach
+
+                @php
+                    $i = 0
+                @endphp
+                @foreach(App\ServicePage::orderBy('id','desc')->get() as $service)
+                @if( $i != 0 ) 
+                <div class="right services-item {{$service->id}}">
+                    <h3>{{$service->title}}</h3>    
+                    <div class="services-content">
+                        {!!$service->services!!}            
+                    </div>            
+                </div>
+                @endif
+                @php
+                    $i++
+                @endphp
+                @endforeach
                 <!-- item end -->
 
-                 <!-- item start -->
-                 <div class="right services-item 2">
-                    <h3>conversion and modification design</h3>    
-                    <div class="services-content">
-                        <p>GB Marine’s naval architecture and marine engineering services includes new vessel designs, existing vessel conversion and modification project work.</p>   
-                        <img src="{{ asset('Frontend/images/Piping 3D (1).PNG') }}" class="img-fluid" alt="">                 
-                    </div>            
-                </div>
-                <!-- item end -->
+                 
 
             </div>
             <!-- right part end -->

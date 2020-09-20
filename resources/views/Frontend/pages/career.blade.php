@@ -23,59 +23,19 @@
         <div class="row">
             
             <!-- item start -->
+            @foreach(App\Career::orderBy('id','desc')->get() as $career) 
             <div class="col-md-3">
                 <div class="job-item">
-                    <a href="{{ route('careerDetail') }}">
+                    <a href="{{ route('careerDetail',$career->id) }}">
                         <i class="fas fa-briefcase"></i>
-                        <p>senior laravel developer</p>
+                        <p>{{$career->title}}</p>
                     </a>
                 </div>
             </div>
+            @endforeach
             <!-- item end -->
 
-            <!-- item start -->
-            <div class="col-md-3">
-                <div class="job-item">
-                    <a href="">
-                        <i class="fas fa-briefcase"></i>
-                        <p>senior laravel developer</p>
-                    </a>
-                </div>
-            </div>
-            <!-- item end -->
-
-            <!-- item start -->
-            <div class="col-md-3">
-                <div class="job-item">
-                    <a href="">
-                        <i class="fas fa-briefcase"></i>
-                        <p>senior laravel developer</p>
-                    </a>
-                </div>
-            </div>
-            <!-- item end -->
-
-            <!-- item start -->
-            <div class="col-md-3">
-                <div class="job-item">
-                    <a href="">
-                        <i class="fas fa-briefcase"></i>
-                        <p>senior laravel developer</p>
-                    </a>
-                </div>
-            </div>
-            <!-- item end -->
-
-            <!-- item start -->
-            <div class="col-md-3">
-                <div class="job-item">
-                    <a href="">
-                        <i class="fas fa-briefcase"></i>
-                        <p>senior laravel developer</p>
-                    </a>
-                </div>
-            </div>
-            <!-- item end -->
+            
 
         </div>
     </div>

@@ -18,6 +18,18 @@
           </ul>
 
           <ul id="sidebarnav" class="p-t-30">
+            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Protfolio Manage</span></a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                <li class="sidebar-item"><a href="{{route('createProtfolio')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Create Protfolio </span></a></li>
+                <li class="sidebar-item"><a href="{{route('manageProtfolio')}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Manage Protfolio </span></a></li>
+                </ul>
+            </li>
+            
+       
+          
+          </ul>
+
+          <ul id="sidebarnav" class="p-t-30">
             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">About Image</span></a>
                 <ul aria-expanded="false" class="collapse  first-level">
                 <li class="sidebar-item"><a href="{{route('createAboutImage')}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Create Images </span></a></li>

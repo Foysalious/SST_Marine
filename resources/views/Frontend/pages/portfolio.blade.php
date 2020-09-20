@@ -23,78 +23,18 @@
         <div class="row">
             <div class="col-md-12">
                 <ul>
+                    @foreach(App\Protfolio::orderBy('id','asc')->get() as $protfolio) 
                     <li>
-                        <a href="{{ route('allPortfolio') }}">
+                        <a href="{{ route('allPortfolio',$protfolio->id) }}">
                             <div class="portfolio-icon-card">
-                                <img src="{{ asset('Frontend/images/portfolio/bulk.jpg') }}" alt="">
+                                <img src="{{ asset('images/protfolio/'.$protfolio->image) }}" alt="">
                             </div>
-                            <p class="text-center">Bulk Carrier</p>
+                            <p class="text-center">{{$protfolio->title}}</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ route('allPortfolio') }}">
-                            <div class="portfolio-icon-card">
-                                <img src="{{ asset('Frontend/images/portfolio/oil.jpg') }}" alt="">
-                            </div>
-                            <p class="text-center">Oil Tanker</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('allPortfolio') }}">
-                            <div class="portfolio-icon-card">
-                                <img src="{{ asset('Frontend/images/portfolio/tug.jpg') }}" alt="">
-                            </div>
-                            <p class="text-center">tug boat</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('allPortfolio') }}">
-                            <div class="portfolio-icon-card">
-                                <img src="{{ asset('Frontend/images/portfolio/passenger.jpg') }}" alt="">
-                            </div>
-                            <p class="text-center">passenger vessel</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('allPortfolio') }}">
-                            <div class="portfolio-icon-card">
-                                <img src="{{ asset('Frontend/images/portfolio/highspeed.jpg') }}" alt="">
-                            </div>
-                            <p class="text-center">High Speed Aluminum Vessel </p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="portfolio-icon-card">
-                                <img src="{{ asset('Frontend/images/portfolio/vessel.jpg') }}" alt="">
-                            </div>
-                            <p class="text-center">Buoy Laying & Survey Vessel </p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="portfolio-icon-card">
-                                <img src="{{ asset('Frontend/images/portfolio/crane.png') }}" alt="">
-                            </div>
-                            <p class="text-center">Crane & Work Boat </p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('allPortfolio') }}">
-                            <div class="portfolio-icon-card">
-                                <img src="{{ asset('Frontend/images/portfolio/accomodation.jpg') }}" alt="">
-                            </div>
-                            <p class="text-center">Accommodation Barge / House Boat </p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('allPortfolio') }}">
-                            <div class="portfolio-icon-card">
-                                <img src="{{ asset('Frontend/images/portfolio/other.jpg') }}" alt="">
-                            </div>
-                            <p class="text-center">Other Vessels </p>
-                        </a>
-                    </li>
+                    @endforeach
+                    
+                    
                 </ul>
             </div>
         </div>

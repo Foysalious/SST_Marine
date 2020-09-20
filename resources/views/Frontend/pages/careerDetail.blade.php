@@ -26,7 +26,7 @@
             <div class="col-md-12">
                 <i class="fas fa-briefcase" style="font-size: 30px"></i>
                 
-                <p>senior laravel developer</p>
+                <p>{!!$career->description_1!!}</p>
             </div>
             <!-- details end -->
 

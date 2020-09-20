@@ -247,7 +247,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
         Route::post('/delete/{servicepage:id}', 'Backend\ServicePageController@destroy')->name('deleteServices');
     });
 
-    Route::group(['prefix' => 'protfolio'], function(){
+    Route::group(['prefix' => 'protfolio'], function(){ 
         Route::get('/manage', 'Backend\Protfolio@index')->name('manageProtfolio');
         // Show Create Page and Store after Submit
         Route::get('/create', 'Backend\Protfolio@create')->name('createProtfolio');
@@ -326,7 +326,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
 });
 
 
-Route::get('/search', 'frontendController@search')->name('search');
+Route::post('/search', 'frontendController@search')->name('search');
 
 Route::get('/forms', 'frontendController@manage')->name('ContactForms');
 Route::get('/', 'frontendController@index')->name('homePage');
@@ -336,10 +336,10 @@ Route::get('/projects', 'frontendController@projects')->name('projectPage');
 Route::get('/client', 'frontendController@client')->name('client');
 Route::get('/services', 'frontendController@services')->name('servicePage');
 Route::get('/career', 'frontendController@career')->name('career');
-Route::get('/career-details', 'frontendController@careerDetail')->name('careerDetail');
+Route::get('/career-details/{career:id}', 'frontendController@careerDetail')->name('careerDetail');
 Route::get('/portfolio', 'frontendController@portfolio')->name('portfolioPage');
-Route::get('/portfolio-details', 'frontendController@portfolioDetail')->name('portfolioDetail');
+Route::get('/portfolio-details/{protfolioImages:id}', 'frontendController@portfolioDetail')->name('portfolioDetail');
 Route::get('/event-and-news', 'frontendController@event')->name('event');
-Route::get('/all-portfolio', 'frontendController@allPortfolio')->name('allPortfolio');
+Route::get('/all-portfolio/{protfolio:id}', 'frontendController@protfolioImage')->name('allPortfolio');
 Route::get('/contact-us', 'frontendController@contact')->name('contactPage');
 Route::get('/project-details/{ship:id}', 'frontendController@project_details')->name('project_details'); 

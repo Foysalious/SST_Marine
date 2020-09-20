@@ -26,7 +26,7 @@ class ServicePageController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
-     */
+     */ 
     public function create()
     {
         return view('backend.pages.servicePage.create');
@@ -40,8 +40,8 @@ class ServicePageController extends Controller
      */
     public function store(ServicePage $service, Request $request)
     {
-        $service->	title             = $request->	title;
-        $service->	services             = $request->	services;
+        $service->title             = $request->title;
+        $service->services             = $request->services;
         $service->save();
         Toastr::success('Service Created');
         return redirect()->route('manageServices');

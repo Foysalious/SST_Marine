@@ -28,13 +28,7 @@
                     
                     <td>{{ $career->title }}</td>
                     <td>{!! $career->description_1 !!}</td>
-                    <td>
-                        @if ( $career->image == NULL )
-                            No Image Attached
-                        @else
-                            <img src="{{ asset('images/career/' . $career->image ) }}" width="100">
-                        @endif
-                    </td>
+                   
                     <td>
                         <div class="btn-group">
                             <a href="{{ route('editcareer', $career->id) }}" class="btn btn-success btn-sm">Update</a>

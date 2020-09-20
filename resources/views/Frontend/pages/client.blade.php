@@ -21,9 +21,12 @@
 <section class="our-clients section-padding" style="background-image:  url('{{ asset('Frontend/images/services-bg-2.png') }}'); background-size: cover; background-position: center ">
     <div class="container">
         <div class="row">
+            @foreach(App\ClientDescrip::orderBy('id','asc')->get() as $description) 
+            
             <div class="col-md-12">
-                <p>SST Marine is committed to providing superior quality, professional engineering services to our clients. Our project teams of experienced engineers, catalogue of efficient designs, and creative use of state-of-the-art tools enable us to support our client requirements.  Some of our recent clients from around the world are presented below. All Corporate Logos and Trademarks are the property of their respective owners.</p>
+               {!!$description->description_1!!}
             </div>
+            @endforeach
         </div>
 
 

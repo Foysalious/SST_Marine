@@ -69,19 +69,19 @@
                 <div class="row">
                     
                     <!-- item start -->
-                    @foreach(App\Project::orderBy('id','asc')->get() as $project)
+                    @foreach(App\Ships::orderBy('id','asc')->get() as $project) 
                     <div class="col-md-6">
                         
                         
                         <div class="project-box">
                             
 
-                            <img src="{{asset('images/project/'.$project->project_image )}}" class="img-fluid" alt="">
+                            <img src="{{asset('images/protfolio/'.$project->image )}}" class="img-fluid" alt="">
 
                             
                             
                             <div class="project-hover">
-                                <a data-fancybox="gallery"  href="{{asset('images/project/'.$project->project_image )}}">
+                                <a data-fancybox="gallery"  href="{{asset('images/protfolio/'.$project->image )}}">
                                 <i class="fas fa-plus-circle"></i>
                                 </a>
                             </div>

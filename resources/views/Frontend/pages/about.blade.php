@@ -29,20 +29,16 @@
         <div class="about-company-carousel owl-carousel owl-theme">
 
             <!-- company image item start -->
+            @foreach(App\about_image::orderBy('id','asc')->get() as $image) 
             <div class="item">
                 <div class="col-md-8 offset-md-2">
-                    <img src="{{ asset('Frontend/images/about/DSCN6646.JPG') }}" alt="">
+                    <img src="{{ asset('images/aboutImages/'.$image->image) }}" alt="">
                 </div>
             </div>
+            @endforeach
             <!-- company image item end -->
 
-            <!-- company image item start -->
-            <div class="item">
-                <div class="col-md-8 offset-md-2">
-                    <img src="{{ asset('Frontend/images/about/DSCN6651.JPG') }}" alt="">
-                </div>
-            </div>
-            <!-- company image item end -->
+            
 
         </div>
 
@@ -58,21 +54,9 @@
         <div class="row">
             @foreach(App\des1::orderBy('id','asc')->get() as $description)
             <div class="col-md-12">
-                <p>
+               
                  {!! $description->description_1!!}   
-                </p>
-                <div class="row">
-                    @foreach(App\Anchor::orderBy('id','asc')->get() as $anchor)
-                    <div class="col-md-6 flex-item">
-                        <p>
-                            <i class="fas fa-anchor"></i> {{$anchor->anchor}}
-                        </p>
-                    </div>
-                    @endforeach
-                </div>
-                <p>
-                    {!!$description->description_2!!}  
-                </p>
+                
             </div>
             @endforeach
 
@@ -89,20 +73,15 @@
         <div class="about-company-carousel owl-carousel owl-theme">
 
             <!-- company image item start -->
+            @foreach(App\about_video::orderBy('id','asc')->get() as $video) 
             <div class="item">
                 <div class="col-md-8 offset-md-2">
-                    <iframe src="https://www.youtube.com/embed/hazMyK_cnzk" frameborder="0"></iframe>
+                    <iframe src='{{$video->link}}' frameborder="0"></iframe>
                 </div>
             </div>
+            @endforeach
             <!-- company image item end -->
 
-            <!-- company image item start -->
-            <div class="item">
-                <div class="col-md-8 offset-md-2">
-                    <iframe src="https://www.youtube.com/embed/hazMyK_cnzk" frameborder="0"></iframe>
-                </div>
-            </div>
-            <!-- company image item end -->
 
         </div>
 

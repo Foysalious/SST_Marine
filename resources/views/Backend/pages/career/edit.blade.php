@@ -18,16 +18,6 @@
                 <textarea class="form-control" id="summary-ckeditor" name="description_1" >{{ $career->description_1 }}</textarea>
             </div>
 
-            <div class="form-group">
-                <label>Image</label>
-                @if ( $career->image == NULL )
-                No Image Uploaded
-                @else 
-              <img src="{{ asset('images/career/' . $career->image ) }}" width="100"><br><br>
-              @endif
-                <input type="file" name="image" class="form-control-file" value="{{ $career->image	 }}">
-            </div>
-
          
            
             <div class="form-group">

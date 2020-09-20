@@ -143,9 +143,10 @@
                 <!-- search start -->
                 <div class="col-md-2">
                     <div class="search-box">
-                        <form action="">
+                        <form action="{{route('search')}}" method="POST">
+                            @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search...">
+                                <input type="text" name="name" class="form-control" placeholder="Search...">
                                 <button type="submit" class="search-button">
                                     <i class="fas fa-search"></i>
                                 </button>

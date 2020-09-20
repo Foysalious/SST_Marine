@@ -94,16 +94,18 @@ class SliderController extends Controller
      */
     public function update(Request $request,Slider $slider)
     {
+       
         $slider->title             = $request->title;
         $slider->description       = $request->description;
        
 
-        if ( $request->backGround_Image )
+        if ( $request->icon_image )
         {
-            if ( File::exists('images/slider/' . $slider->image ) ){
-                File::delete('images/slider/' . $slider->image);
+            
+            if ( File::exists(public_path('images/slider/' . $slider->backGround_Image )) ){
+                File::delete(public_path('images/slider/' . $slider->backGround_Image));
             }
-            $image = $request->file('backGround_Image');
+            $image = $request->file('icon_image');
             $img = time() .Str::random(12). '.' . $image->getClientOriginalExtension();
             $location = public_path('images/slider/' . $img);
             Image::make($image)->save($location);

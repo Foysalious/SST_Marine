@@ -22,58 +22,17 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 all-portfolio">
+                @foreach($protfolioImages as $protfolioImage)
+                    
+                
                 <div class="portfolio-box">
-                    <img src="{{ asset('Frontend/images/20T BP Tug(1).jpg') }}" class="img-fluid" alt="">
+                    <img src="{{ asset('images/protfolio/'.$protfolioImage->image ) }}" class="img-fluid" alt="">
                     <div class="view-detail-portolio">
-                        <a href="{{ route('portfolioDetail') }}">view more <i class="fas fa-angle-double-right"></i> </a>
+                        <a href="{{ route('portfolioDetail',$protfolioImage->id) }}">view more <i class="fas fa-angle-double-right"></i> </a>
                     </div>
                 </div>
-                <div class="portfolio-box">
-                    
-                        <img src="{{ asset('Frontend/images/24M Tug1(BWDB TUG15).JPG') }}" class="img-fluid" alt="">
-                   
-                    <div class="view-detail-portolio">
-                        <a href="{{ route('portfolioDetail') }}">view more <i class="fas fa-angle-double-right"></i> </a>
-                    </div>
-                </div>
-                <div class="portfolio-box">
-                    <img src="{{ asset('Frontend/images/25T BP Twin Screw Tug.JPG') }}" class="img-fluid" alt="">
-                    <div class="view-detail-portolio">
-                        <a href="{{ route('portfolioDetail') }}">view more <i class="fas fa-angle-double-right"></i> </a>
-                    </div>
-                </div>
-                <div class="portfolio-box">
-                    
-                        <img src="{{ asset('Frontend/images/32m Salvage cum Fi-Fi Tug.PNG') }}" class="img-fluid" alt="">
-                    
-                    <div class="view-detail-portolio">
-                        <a href="{{ route('portfolioDetail') }}">view more <i class="fas fa-angle-double-right"></i> </a>
-                    </div>
-                </div>
-                <div class="portfolio-box">
-                    
-                        <img src="{{ asset('Frontend/images/P715(2).JPG') }}" class="img-fluid" alt="">
-                   
-                    <div class="view-detail-portolio">
-                        <a href="{{ route('portfolioDetail') }}">view more <i class="fas fa-angle-double-right"></i> </a>
-                    </div>
-                </div>
-                <div class="portfolio-box">
-                    
-                        <img src="{{ asset('Frontend/images/20T BP Tug(1).jpg') }}" class="img-fluid" alt="">
-                    
-                    <div class="view-detail-portolio">
-                        <a href="{{ route('portfolioDetail') }}">view more <i class="fas fa-angle-double-right"></i> </a>
-                    </div>
-                </div>
-                <div class="portfolio-box">
-                    
-                        <img src="{{ asset('Frontend/images/24M Tug1(BWDB TUG15).JPG') }}" class="img-fluid" alt="">
-                   
-                    <div class="view-detail-portolio">
-                        <a href="{{ route('portfolioDetail') }}">view more <i class="fas fa-angle-double-right"></i> </a>
-                    </div>
-                </div>
+                @endforeach
+                
             </div>
         </div>
     </div>

@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\ships;
 use App\Ship;
 use App\ContactForm;
+use App\Protfolio;
+use App\ProtfolioImages;
+use App\Career;
 
 class frontendController extends Controller
 {
@@ -39,8 +42,8 @@ class frontendController extends Controller
     {
       return view('Frontend.pages.portfolio');  
     }
-    public function portfolioDetail(){
-      return view('Frontend.pages.portfolio-detail');
+    public function portfolioDetail(ProtfolioImages $protfolioImages){
+      return view('Frontend.pages.portfolio-detail',compact('protfolioImages'));
     }
     public function allPortfolio(){
       return view('Frontend.pages.all-portfolio');
@@ -69,8 +72,8 @@ class frontendController extends Controller
     public function career(){
       return view('Frontend.pages.career');
     }
-    public function careerDetail(){
-      return view('Frontend.pages.careerDetail');
+    public function careerDetail(Career $career){
+      return view('Frontend.pages.careerDetail',compact('career'));
     }
 
     public function contact()
@@ -101,9 +104,18 @@ class frontendController extends Controller
     }
     public function search(Request $request)
     {
-      $search=Ships::Where('name', 'LIKE', "%$request->name%")->orWhere('category', 'LIKE', "%$request->name%")->orWhere('vessel_name', 'LIKE', "%$request->name%")->orWhere('owner', 'LIKE', "%$request->name%")->
+      $text = $request->name;
+      $search=Ships::orWhere('name', 'LIKE', "%$request->name%")->orWhere('category', 'LIKE', "%$request->name%")->orWhere('vessel_name', 'LIKE', "%$request->name%")->orWhere('owner', 'LIKE', "%$request->name%")->
       orWhere('builder', 'LIKE', "%$request->name%")->orWhere('class', 'LIKE', "%$request->name%")->orWhere('build_date', 'LIKE', "%$request->name%")->orWhere('description', 'LIKE', "%$request->name%")->
       orWhere('features', 'LIKE', "%$request->name%")->get();
+
+      return view('Frontend.pages.search',compact('search','text'));
+    }
+
+    public function protfolioImage(Protfolio $protfolio)
+    {
+      $protfolioImages=  ProtfolioImages::orderBy('id', 'desc')->where('protfolio_id',$protfolio->id )->get();
+      return view('Frontend.pages.all-portfolio',compact('protfolioImages'));
     }
    
 }

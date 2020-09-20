@@ -10,7 +10,7 @@
             
             <div class="form-group">
               <label>Title</label>
-              <input class="form-control"  name="title">
+              <input class="form-control"  name="title"> 
           </div>
 
             <div class="form-group">

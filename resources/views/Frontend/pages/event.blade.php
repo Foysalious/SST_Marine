@@ -26,18 +26,34 @@
             <div class="col-md-4">
                 <div class="left">
                     <ul>
-                        <li class="services-click active-item 1" id="1">
-                            <i class="fas fa-angle-double-right"></i> Contract with BIWTC(27.10.19)
+                        @php
+                            $i = 0;
+                        @endphp
+                        @foreach(App\Events::orderBy('id','desc')->get() as $event) 
+                        @if( $i == 0 )
+                        <li class="services-click active-item {{$event->id}}" id="{{ $event->id }}">
+                            <i class="fas fa-angle-double-right"></i> {{$event->title}}
                         </li>
-                        <li class="services-click 2" id="2">
-                            <i class="fas fa-angle-double-right"></i> MIST Fair(26.09.19)
+                        @endif
+                        @php
+                            $i--;
+                        @endphp
+                        @endforeach
+
+                        @php
+                            $i = 0;
+                        @endphp
+                        @foreach(App\Events::orderBy('id','desc')->get() as $event) 
+                        @if( $i != 0 )
+                            <li class="services-click {{$event->id}}" id="{{ $event->id }}">
+                            <i class="fas fa-angle-double-right"></i> {{$event->title}}
                         </li>
-                        <li class="services-click 3" id="3">
-                            <i class="fas fa-angle-double-right"></i> Office Picnic,2019
-                        </li>
-                        <li class="services-click 4" id="4">
-                            <i class="fas fa-angle-double-right"></i> Photo with Chief Engineer(06.01.20)
-                        </li>
+                        @endif
+                        @php
+                            $i++;
+                        @endphp
+                        @endforeach
+                        
                     </ul>                
                 </div>            
             </div>
@@ -47,10 +63,15 @@
             <div class="col-md-8">
 
                 <!-- item start -->
-                <div class="right services-item active-service 1">
-                    <h3>Contract with BIWTC(27.10.19)</h3>    
+                @php
+                    $i = 0;
+                @endphp
+                @foreach(App\Events::orderBy('id','desc')->get() as $event) 
+                @if( $i == 0 )
+                <div class="right services-item active-service {{ $event->id }}">
+                    <h3>{{$event->title}}</h3>    
                     <div class="services-content">
-                        <p>Contract with BIWTC on 24.10.2019 for Design, Approval, Construction Supervision & Monitoring Services of Modern Passenger Cruise Vessel, Coastal Passenger Vessel, Cabin Cruiser cum Inspection Boat, Salvage cum Fire Fighting Tug, Coastal Sea Truck, Improved K-Type Ferry & Improved Utility Type Ferry.</p>   
+                        {!!$event->services !!}
 
                         <div class="event-carousel owl-carousel owl-theme">
                             <!-- item start -->
@@ -68,30 +89,45 @@
 
                     </div>            
                 </div>
+                @endif
+                @php
+                    $i--;
+                @endphp
+                @endforeach
                 <!-- item end -->
 
-                 <!-- item start -->
-                 <div class="right services-item 2">
-                    <h3>MIST Fair(26.09.19)</h3>    
+                <!-- item start -->
+                @php
+                    $i = 0;
+                @endphp
+                @foreach(App\Events::orderBy('id','desc')->get() as $event) 
+                @if( $i != 0 )
+                <div class="right services-item {{ $event->id }}">
+                    <h3>{{$event->title}}</h3>    
                     <div class="services-content">
-                        <p>SST Marine Solutions Ltd participates on the 3-days Fair organized by MIST(Military Institute of Science and technology) on September,2019 on occasion of  World Maritime Day 2019.</p>   
+                        {!!$event->services !!}
 
                         <div class="event-carousel owl-carousel owl-theme">
                             <!-- item start -->
                             <div class="item">
-                                <img src="{{ asset('Frontend/images/DSCN9927.JPG') }}" class="img-fluid" alt="">                        
+                                <img src="{{ asset('Frontend/images/8062975c-4d42-4e0e-bcb3-f46265ab76e8.JPG') }}" class="img-fluid" alt="">                        
                             </div>
                             <!-- item end -->
 
                             <!-- item start -->
                             <div class="item">
-                                <img src="{{ asset('Frontend/images/DSCN9951.JPG') }}" class="img-fluid" alt="">                              
+                                <img src="{{ asset('Frontend/images/a66d60ba-f598-4a1a-aae6-10be45bd8052.JPG') }}" class="img-fluid" alt="">                              
                             </div>
                             <!-- item end -->
                         </div>
 
                     </div>            
                 </div>
+                @endif
+                @php
+                    $i++;
+                @endphp
+                @endforeach
                 <!-- item end -->
 
             </div>
